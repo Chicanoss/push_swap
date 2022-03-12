@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/12 13:45:24 by rgeral           ###   ########.fr       */
+/*   Created: 2022/03/12 13:14:49 by rgeral            #+#    #+#             */
+/*   Updated: 2022/03/12 13:18:27 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
+#include "../incs/push_swap.h"
 
-void ft_radixsort(int *arr, int n);
-int DecToBase(int base, int n);
-void ft_index(int	*arr, int	n);
-void ft_algo (int    *arr, int n);
-
-# endif
+void ft_index(int	*arr, int	n)
+{
+	int i;
+	int j;
+	int *copy;
+	
+	copy = (int	*)malloc(sizeof(int) * n);
+    i = 0;
+    while (i < n)
+    {
+        copy[i] = arr[i];
+        i++;
+    }
+	ft_radixsort(copy, n);
+	i = 0;
+	j = 0;
+	while(i < n)
+	{
+		while (j < n)
+		{
+			if(arr[i] == copy[j])
+            {
+				arr[i] = j;
+            }
+			j++;
+		}
+        j = 0;
+		i++;
+	}
+}

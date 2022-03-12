@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:05:58 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/11 11:19:29 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/12 13:10:27 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ int DecToBase(int base, int n)
 		num = pow(10,i)*remainder + num;
 		i++;
 	}
-	printf("%d" , 6&1);
 	return num;
 }

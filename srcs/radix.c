@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:22:15 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/10 14:45:41 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/12 12:54:09 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,22 @@ int getMax(int arr[], int n)
 
 void countSort(int arr[], int n, int exp)
 {
-    int output[n]; // output array
+    int output[n];
     int i; 
 	int	count[10] = { 0 };
  
-    // Store count of occurrences in count[]
 	i = 0;
 	while (i < n)
 	{
 		count[(arr[i] / exp) % 10]++;
 		i++;
 	}
- 
-    // Change count[i] so that count[i] now contains actual
-    //  position of this digit in output[]
 	i = 1;
 	while (i < 10)
 	{
 		count[i] += count[i -1];
 		i++;
 	}
- 
-    // Build the output array
 	i = n - 1;
 	while (i >= 0)
 	{
@@ -58,9 +52,6 @@ void countSort(int arr[], int n, int exp)
         count[(arr[i] / exp) % 10]--;
 		i--;
 	}
- 
-    // Copy the output array to arr[], so that arr[] now
-    // contains sorted numbers according to current digit
 	i = 0;
 	while (i < n)
 	{
@@ -68,40 +59,20 @@ void countSort(int arr[], int n, int exp)
 		i++;
 	}
 }
- 
-// The main function to that sorts arr[] of size n using
-// Radix Sort
-void print(int arr[], int arrb[], int n)
-{
-	int i;
-	i = 0;
 
-	while (i < n)
-	{
-		arrb[i] = arr[i];
-		printf("%d\n" , arrb[i]);
-		i++;
-	}
-}
-
-void ft_radixsort(int *arr, int *arrb, int n)
+void ft_radixsort(int *arr, int n)
 {
-    // Find the maximum number to know number of digits
     int m;
 	int	exp;
+	int i;
 	
 	exp = 1;
 	m = getMax(arr, n);
- 
-    // Do counting sort for every digit. Note that instead
-    // of passing digit number, exp is passed. exp is 10^i
-    // where i is current digit number
+	i = 0;
+
 	while (m / exp > 0)
 	{
 		countSort(arr, n, exp);
 		exp *= 10;
 	}
-    print(arr,arrb, n);
 }
- 
-// A utility function to print an array

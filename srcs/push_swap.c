@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/11 11:24:01 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/12 13:57:12 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,32 @@
 
 int main()
 {
-    int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 , 32};
+    int arr[] = { 1, 2, 3, 4, 5};
 	int *arrb;
     int n = sizeof(arr) / sizeof(arr[0]);
+    int i;
 
+    i = 0;
 	arrb = (int	*)malloc(sizeof(int) * n);
-     
-      // Function Call
-      ft_radixsort(arr, arrb, n);
-	  printf("\n10 en binaire  : %d", DecToBase(2, 10));
+    ft_index(arr, n);
+   /* while( i < n)
+    {
+        printf("%d\n" , arr[i]);
+        i++;
+    }*/
+    ft_radixsort(arr, n);
+    while( i < n)
+    {
+        arr[i] = DecToBase(2, arr[i]);
+        i++;
+    }
+    i = 0;
+    ft_algo(arr, n);
+    /*while (i < n)
+    {
+        printf("%d\n" , arr[i]);
+        i++;
+    }*/
+
     return 0;
 }

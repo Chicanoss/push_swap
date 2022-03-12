@@ -10,6 +10,8 @@ DIR_INCS	:=	incs
 LST_SRCS	:=	push_swap.c \
 				radix.c \
 				base.c \
+				index.c \
+				algo.c \
 
 
 LST_OBJS	:=	$(LST_SRCS:.c=.o)
