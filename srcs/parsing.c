@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/14 15:01:27 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/14 18:04:09 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,50 @@ int ft_check_doubles(int arr[], int n)
 	}
 	return(1);
 }
+int	ft_check_numbers(int	n)
+{
+	if (n <= 1)
+	{
+		perror("Not enough numbers");
+		exit(EXIT_FAILURE);
+	}
+	return(1);
+}
+
+int ft_check_order(int	*arr, int n)
+{
+	int i;
+	int	count;
+
+	count = 0;
+	i = 0;
+	while (i < n)
+	{
+		if(arr[i] < arr[i + 1])
+			count++;
+		i++;
+	}
+	if (count == n)
+	{
+		perror("numbers in order");
+		exit(EXIT_FAILURE);
+	}
+	return(1);
+}
 
 int	ft_parsing(int	*arr, int	n)
 {
 	int i;
 
 	i = 0;
+	ft_check_numbers(n);
+	ft_check_order(arr, n);
 	ft_check_doubles(arr, n);
 	while (i < n)
 	{
 		ft_isdigit(arr[i]);
 		i++;
 	}
+	printf("parsing ok");
 	return(1);
 }
