@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/12 13:45:24 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/13 01:41:35 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@
 void ft_radixsort(int *arr, int n);
 int DecToBase(int base, int n);
 void ft_index(int	*arr, int	n);
-void ft_algo (int    *arr, int n);
+void ft_algo (int    *arr,int *arrb, int n);
 
 # endif

@@ -6,16 +6,39 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/12 13:53:34 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/13 10:13:58 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-void ft_algo (int    *arr, int n)
+void ft_algo (int    *arr,int *arrb, int n)
 {
+    int i;
+    int temp;
 
-    int size = n;
+    i = 0;
+    while (i < n)
+    {
+        while (arr[i] > 10)
+        {
+            temp = arr[i] / 10;
+            if(temp < 10)
+                break;
+        }
+        i++;
+    }
+    arrb[1] = 1;
+
+
+
+
+
+
+
+
+
+    /*int size = n;
     int max_num = n - 1; // the biggest number in a is stack_size - 1
     int max_bits = 0; // how many bits for max_num 
     while ((max_num >> max_bits) != 0) ++max_bits;
@@ -33,5 +56,5 @@ void ft_algo (int    *arr, int n)
         // otherwise push to stack b
             }
         }
-    }
+    }*/
 }

@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/12 13:57:12 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/14 11:06:16 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    int arr[] = { 1, 2, 3, 4, 5};
+    int arr[] = { 3, 2, 14, 4, 5};
 	int *arrb;
     int n = sizeof(arr) / sizeof(arr[0]);
     int i;
@@ -28,18 +28,18 @@ int main()
         i++;
     }*/
     ft_radixsort(arr, n);
-    while( i < n)
+   /* while( i < n)
     {
         arr[i] = DecToBase(2, arr[i]);
         i++;
-    }
+    }*/
     i = 0;
-    ft_algo(arr, n);
-    /*while (i < n)
+    //ft_algo(arr, arrb, n);
+    while (i < n)
     {
         printf("%d\n" , arr[i]);
         i++;
-    }*/
+    }
 
     return 0;
 }
