@@ -12,6 +12,7 @@ LST_SRCS	:=	push_swap.c \
 				base.c \
 				index.c \
 				algo.c \
+				parsing.c \
 
 
 LST_OBJS	:=	$(LST_SRCS:.c=.o)
