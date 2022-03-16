@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/16 18:14:01 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/16 18:49:03 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,29 @@ int	ft_isdigit(int n)
 		perror("not digit");
 		exit(EXIT_FAILURE);
 	}
+}
+
+int	ft_atoi(const char	*str)
+{
+	int	i;
+	int	neg;
+	long int	temp;
+
+	neg = 1;
+	i = 0;
+	temp = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{	
+		if (str[i] == '-')
+			neg = neg * -1;
+		i++;
+	}
+	while (str[i] <= '9' && str[i] >= '0')
+	{
+		temp = temp * 10 + str[i] - '0';
+		i++;
+	}
+	return (temp * neg);
 }
 
 int ft_check_doubles(int arr[], int n)
@@ -82,12 +105,17 @@ int ft_check_order(int	*arr, int n)
 	return(1);
 }
 
-int	ft_parsing(int	*arr, int	n)
+int	ft_parsing(char	*arr, int	n)
 {
 	int i;
+	int	*ntm;
 
+	ntm = (int	*)malloc(sizeof(int) * n);
 	i = 0;
-	ft_check_numbers(n);
+	printf("%s\n", arr);
+	/*
+	//ntm = ft_atoi(arr);
+	//ft_check_numbers(n);
 	ft_check_order(arr, n);
 	ft_check_doubles(arr, n);
 	while (i < n)
@@ -97,5 +125,6 @@ int	ft_parsing(int	*arr, int	n)
 	}
 	
 	printf("parsing ok\n");
+	*/
 	return(1);
 }
