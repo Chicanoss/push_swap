@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/14 18:04:09 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/15 09:00:21 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int ft_check_doubles(int arr[], int n)
 		{
 			if (arr[i] == arr[j] && check == 0)
 			{
-				perror("double");
+				perror("Error");
 				exit(EXIT_FAILURE);
 			}
 			if (arr[i] == arr[j])

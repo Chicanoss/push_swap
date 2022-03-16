@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/14 18:03:22 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/15 09:00:00 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    int arr[] = { 1, 2, 14, 4, 12};
+    int arr[] = { 2, 2, 14, 4, 12};
 	int *arrb;
     int n = sizeof(arr) / sizeof(arr[0]);
     int i;
