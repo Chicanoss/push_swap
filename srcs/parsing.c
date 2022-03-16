@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/15 09:00:21 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/16 18:14:01 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int	ft_parsing(int	*arr, int	n)
 		ft_isdigit(arr[i]);
 		i++;
 	}
-	printf("parsing ok");
+	
+	printf("parsing ok\n");
 	return(1);
 }

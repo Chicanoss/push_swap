@@ -6,29 +6,45 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/13 10:13:58 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/16 17:53:38 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
+
+int ft_getMax(int arr[], int n)
+{
+    int mx = arr[0];
+	int i;
+
+	i = 1;
+	while (i < n)
+	{
+		if (arr[i] > mx)
+			mx = arr[i];
+		i++;
+	}
+    return mx;
+}
+
+
 void ft_algo (int    *arr,int *arrb, int n)
 {
-    int i;
-    int temp;
+    int m;
+	int	exp;
+	int i;
+	
+	exp = 1;
+    arrb = arr;
+	m = ft_getMax(arr, n);
+	i = 0;
 
-    i = 0;
-    while (i < n)
-    {
-        while (arr[i] > 10)
-        {
-            temp = arr[i] / 10;
-            if(temp < 10)
-                break;
-        }
-        i++;
-    }
-    arrb[1] = 1;
+	while (m / exp > 0)
+	{
+		exp *= 10;
+	}
+    printf("%d\n" , exp);
 
 
 

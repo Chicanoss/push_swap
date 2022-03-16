@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/15 09:00:00 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/16 17:54:06 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    int arr[] = { 2, 2, 14, 4, 12};
+    int arr[] = { 2, 3, 14, 4, 12};
 	int *arrb;
     int n = sizeof(arr) / sizeof(arr[0]);
     int i;
@@ -35,7 +35,7 @@ int main()
         i++;
     }*/
     i = 0;
-    //ft_algo(arr, arrb, n);
+    ft_algo(arr, arrb, n);
     /*while (i < n)
     {
         printf("%d\n" , arr[i]);
