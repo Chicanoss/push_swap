@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/16 18:49:03 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/21 20:16:37 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int ft_check_doubles(int arr[], int n)
 		{
 			if (arr[i] == arr[j] && check == 0)
 			{
-				perror("Error");
+				perror("Error doubles");
 				exit(EXIT_FAILURE);
 			}
 			if (arr[i] == arr[j])
@@ -97,6 +97,8 @@ int ft_check_order(int	*arr, int n)
 			count++;
 		i++;
 	}
+	//printf("%d" , count);
+	printf("%d" , n);
 	if (count == n)
 	{
 		perror("numbers in order");
@@ -105,26 +107,39 @@ int ft_check_order(int	*arr, int n)
 	return(1);
 }
 
-int	ft_parsing(char	*arr, int	n)
+int	ft_parsing(char	**arr, int	n)
 {
 	int i;
-	int	*ntm;
+	int	*astack;
 
-	ntm = (int	*)malloc(sizeof(int) * n);
+	astack = (int	*)malloc(sizeof(int) * n);
+	i = 1;
+	//printf("%s\n", arr);
+	//printf("%d", n);
+	
+	while(i < n)
+	{
+		astack[i] = ft_atoi(arr[i]);
+		i++;
+	}
+	i = 1;
+	while(i < n)
+	{
+		printf("%d\n", astack[i]);
+		i++;
+	}
+	
+	ft_check_numbers(n);
+	ft_check_order(astack, n);
+	ft_check_doubles(astack, n);
 	i = 0;
-	printf("%s\n", arr);
-	/*
-	//ntm = ft_atoi(arr);
-	//ft_check_numbers(n);
-	ft_check_order(arr, n);
-	ft_check_doubles(arr, n);
 	while (i < n)
 	{
-		ft_isdigit(arr[i]);
+		ft_isdigit(astack[i]);
 		i++;
 	}
 	
 	printf("parsing ok\n");
-	*/
+	
 	return(1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/16 18:37:41 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/21 20:00:58 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,15 @@ int main(int   argc, char **argv)
     int i;
 
     i = 0;
-    while (i < argc)
+    /*while (i < argc)
     {
         printf("%s\n" , argv[i]);
         i++;
     }
+	*/
 	//arrb = (int	*)malloc(sizeof(int) * n);
 	i = 0;
-    while (i < argc)
-    {
-        ft_parsing(argv[i], argc);
-        i++;
-    }
+    ft_parsing(argv, argc);
     //ft_index(arr, n);
    /* while( i < n)
     {
