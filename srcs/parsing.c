@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 13:29:22 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 13:35:11 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int	ft_check_char(char	**arr)
 	return(1);
 }
 
-int	ft_parsing(char	**arr, int	n)
+int	*ft_parsing(char	**arr, int	n)
 {
 	int i;
 	int	*astack;
@@ -126,16 +126,16 @@ int	ft_parsing(char	**arr, int	n)
 		i++;
 	}
 	i = 1;
-	while(i < n)
+	/*while(i < n)
 	{
 		printf("%d\n", astack[i]);
 		i++;
-	}
+	}*/
 	
 	ft_check_order(astack, n);
 	ft_check_doubles(astack, n);
 	
 	printf("parsing ok\n");
 	
-	return(1);
+	return(astack);
 }

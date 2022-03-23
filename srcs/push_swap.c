@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/21 20:00:58 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 14:05:54 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int main(int   argc, char **argv)
 {
-	//int *arrb;
+	int *bstack;
     //int n = sizeof(argc) / sizeof(argv[0]);
     int i;
+	int	*astack;
 
     i = 0;
     /*while (i < argc)
@@ -25,15 +26,15 @@ int main(int   argc, char **argv)
         i++;
     }
 	*/
-	//arrb = (int	*)malloc(sizeof(int) * n);
-	i = 0;
-    ft_parsing(argv, argc);
-    //ft_index(arr, n);
-   /* while( i < n)
+	bstack = (int	*)malloc(sizeof(int) * argc);
+	i = 1;
+    astack = ft_parsing(argv, argc);
+    ft_index(astack, argc);
+    while( i < argc)
     {
-        printf("%d\n" , arr[i]);
+        printf("%d\n" , astack[i]);
         i++;
-    }*/
+    }
     //ft_radixsort(arr, n);
    /* while( i < n)
     {
@@ -41,7 +42,7 @@ int main(int   argc, char **argv)
         i++;
     }*/
     //i = 0;
-    //ft_algo(arr, arrb, n);
+    ft_algo(astack, bstack, argc);
     /*while (i < n)
     {
         printf("%d\n" , arr[i]);

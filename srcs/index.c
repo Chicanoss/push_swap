@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:14:49 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/14 13:13:41 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 13:57:23 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@ void ft_index(int	*arr, int	n)
 	int *copy;
 	
 	copy = (int	*)malloc(sizeof(int) * n);
-    i = 0;
+    i = 1;
     while (i < n)
     {
         copy[i] = arr[i];
         i++;
     }
 	ft_radixsort(copy, n);
-	i = 0;
+	i = 0; 	/*
+			care 
+			*/
 	j = 0;
 	while(i < n)
 	{
