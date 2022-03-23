@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 12:20:59 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 13:29:22 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int ft_check_order(int	*arr, int n)
 	}
 	while (arr[i] < arr[i + 1])
 	{
-		printf("%d comparé à %d\n", arr[i], arr[i + 1]);
+		//printf("%d comparé à %d\n", arr[i], arr[i + 1]);
 		if(i == n - 2)
 		{
 			perror("in order");
@@ -96,20 +96,15 @@ int	ft_check_char(char	**arr)
 
 	while(arr[i])
 	{
-		printf("test\n");
 		while (arr[i][j])
 		{
-			printf("test2\n");
-			if(arr[i][j] > 49 || arr[i][j] < 57)
-			{
-				printf("%d\n", arr[i][j]);
-			}
+			if(arr[i][j] >= 49 && arr[i][j] <= 57)
+				j++;
 			else
 			{
 				perror("not digit");
 				exit(EXIT_FAILURE);
 			}
-			j++;
 		}
 		j = 0;
 		i++;
@@ -119,12 +114,11 @@ int	ft_check_char(char	**arr)
 
 int	ft_parsing(char	**arr, int	n)
 {
-	//int i;
-	//int	*astack;
-	n = 0;
+	int i;
+	int	*astack;
 
 	ft_check_char(arr);
-	/*astack = (int	*)malloc(sizeof(int) * n);
+	astack = (int	*)malloc(sizeof(int) * n);
 	i = 1;
 	while(i < n)
 	{
@@ -134,16 +128,14 @@ int	ft_parsing(char	**arr, int	n)
 	i = 1;
 	while(i < n)
 	{
-		//printf("%d\n", astack[i]);
+		printf("%d\n", astack[i]);
 		i++;
 	}
 	
-	ft_check_numbers(n);
 	ft_check_order(astack, n);
 	ft_check_doubles(astack, n);
 	
 	printf("parsing ok\n");
-	*/
 	
 	return(1);
 }
