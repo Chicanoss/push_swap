@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/21 20:16:37 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 11:57:05 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,35 +74,26 @@ int ft_check_doubles(int arr[], int n)
 	}
 	return(1);
 }
-int	ft_check_numbers(int	n)
-{
-	if (n <= 1)
-	{
-		perror("Not enough numbers");
-		exit(EXIT_FAILURE);
-	}
-	return(1);
-}
 
 int ft_check_order(int	*arr, int n)
 {
 	int i;
-	int	count;
 
-	count = 0;
-	i = 0;
-	while (i < n)
+	i = 1;
+	if (n <= 2)
 	{
-		if(arr[i] < arr[i + 1])
-			count++;
-		i++;
-	}
-	//printf("%d" , count);
-	printf("%d" , n);
-	if (count == n)
-	{
-		perror("numbers in order");
+		perror("Not enough numbers");
 		exit(EXIT_FAILURE);
+	}
+	while (arr[i] < arr[i + 1])
+	{
+		printf("%d comparé à %d\n", arr[i], arr[i + 1]);
+		if(i == n - 2)
+		{
+			perror("in order");
+			exit(EXIT_FAILURE);
+		}
+		i++;
 	}
 	return(1);
 }
@@ -125,7 +116,7 @@ int	ft_parsing(char	**arr, int	n)
 	i = 1;
 	while(i < n)
 	{
-		printf("%d\n", astack[i]);
+		//printf("%d\n", astack[i]);
 		i++;
 	}
 	
