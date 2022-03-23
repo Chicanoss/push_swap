@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 13:33:33 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 16:24:12 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int DecToBase(int base, int n);
 void ft_index(int	*arr, int	n);
 void ft_algo (int    *arr,int *arrb, int n);
 int	*ft_parsing(char	**arr, int	n);
+void ft_pb (int *astack, int *bstack, int n);
 
 # endif

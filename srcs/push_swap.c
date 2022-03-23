@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 14:05:54 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 16:48:44 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ int main(int   argc, char **argv)
 	i = 1;
     astack = ft_parsing(argv, argc);
     ft_index(astack, argc);
-    while( i < argc)
+	ft_pb (astack, bstack, argc);
+	//printf("%d", astack[0]);
+    /*while( i < argc)
     {
         printf("%d\n" , astack[i]);
         i++;
-    }
+    }*/
     //ft_radixsort(arr, n);
    /* while( i < n)
     {
@@ -42,7 +44,7 @@ int main(int   argc, char **argv)
         i++;
     }*/
     //i = 0;
-    ft_algo(astack, bstack, argc);
+    //ft_algo(astack, bstack, argc);
     /*while (i < n)
     {
         printf("%d\n" , arr[i]);
