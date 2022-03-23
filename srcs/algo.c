@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/16 17:53:38 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 14:20:52 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,23 @@ int ft_getMax(int arr[], int n)
 }
 
 
-void ft_algo (int    *arr,int *arrb, int n)
+void ft_algo (int    *astack,int *bstack, int n)
 {
     int m;
 	int	exp;
 	int i;
 	
+	bstack = 0;
 	exp = 1;
-    arrb = arr;
-	m = ft_getMax(arr, n);
+	m = ft_getMax(astack, n);
+	printf(" valeur du max %d\n" , m);
 	i = 0;
 
 	while (m / exp > 0)
 	{
 		exp *= 10;
 	}
-    printf("%d\n" , exp);
+    printf("valeur de exp : %d\n" , exp);
 
 
 
