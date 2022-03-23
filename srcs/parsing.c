@@ -6,22 +6,11 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 11:57:05 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 12:20:59 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
-
-int	ft_isdigit(int n)
-{
-	if (n > INT_MIN && n < INT_MAX)
-		return (1);
-	else
-	{
-		perror("not digit");
-		exit(EXIT_FAILURE);
-	}
-}
 
 int	ft_atoi(const char	*str)
 {
@@ -97,17 +86,46 @@ int ft_check_order(int	*arr, int n)
 	}
 	return(1);
 }
+int	ft_check_char(char	**arr)
+{
+	int i;
+	int j;
+
+	i = 1;
+	j = 0;
+
+	while(arr[i])
+	{
+		printf("test\n");
+		while (arr[i][j])
+		{
+			printf("test2\n");
+			if(arr[i][j] > 49 || arr[i][j] < 57)
+			{
+				printf("%d\n", arr[i][j]);
+			}
+			else
+			{
+				perror("not digit");
+				exit(EXIT_FAILURE);
+			}
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return(1);
+}
 
 int	ft_parsing(char	**arr, int	n)
 {
-	int i;
-	int	*astack;
+	//int i;
+	//int	*astack;
+	n = 0;
 
-	astack = (int	*)malloc(sizeof(int) * n);
+	ft_check_char(arr);
+	/*astack = (int	*)malloc(sizeof(int) * n);
 	i = 1;
-	//printf("%s\n", arr);
-	//printf("%d", n);
-	
 	while(i < n)
 	{
 		astack[i] = ft_atoi(arr[i]);
@@ -123,14 +141,9 @@ int	ft_parsing(char	**arr, int	n)
 	ft_check_numbers(n);
 	ft_check_order(astack, n);
 	ft_check_doubles(astack, n);
-	i = 0;
-	while (i < n)
-	{
-		ft_isdigit(astack[i]);
-		i++;
-	}
 	
 	printf("parsing ok\n");
+	*/
 	
 	return(1);
 }
