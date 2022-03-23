@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 14:17:27 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/23 22:14:41 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int ft_check_order(int	*arr, int n)
 {
 	int i;
 
-	i = 1;
+	i = 0;
 	if (n <= 2)
 	{
 		perror("Not enough numbers");
@@ -77,7 +77,7 @@ int ft_check_order(int	*arr, int n)
 	while (arr[i] < arr[i + 1])
 	{
 		//printf("%d comparé à %d\n", arr[i], arr[i + 1]);
-		if(i == n - 2)
+		if(i == n - 3)
 		{
 			perror("in order");
 			exit(EXIT_FAILURE);
@@ -115,15 +115,18 @@ int	ft_check_char(char	**arr)
 int	*ft_parsing(char	**arr, int	n)
 {
 	int i;
+	int j;
 	int	*astack;
 
 	ft_check_char(arr);
-	astack = (int	*)malloc(sizeof(int) * n);
+	astack = (int	*)ft_calloc(sizeof(int) , (n - 1));
 	i = 1;
+	j = 0;
 	while(i < n)
 	{
-		astack[i] = ft_atoi(arr[i]);
+		astack[j] = ft_atoi(arr[i]);
 		i++;
+		j++;
 	}
 	i = 1;
 	/*while(i < n)
@@ -136,6 +139,7 @@ int	*ft_parsing(char	**arr, int	n)
 	ft_check_doubles(astack, n);
 	
 	printf("parsing ok\n");
+	printf("%d\n", astack[0]);
 	
 	return(astack);
 }
