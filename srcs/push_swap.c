@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/26 12:06:18 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/26 17:24:28 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int main(int   argc, char **argv)
 	int i;
 
 	stack.bstack = (int	*)ft_calloc(sizeof(int), argc - 1);
+	stack.astack = (int	*)ft_calloc(sizeof(int), argc - 1);
 	stack.asize = 0;
 	stack.bsize = 0;
+	stack.size = argc - 1;
     i = 0;
     /*while (i < argc)
     {
@@ -28,14 +30,14 @@ int main(int   argc, char **argv)
         i++;
     }
 	*/
-	i = 1;
+	i = 0;
     ft_parsing(argv, &stack, argc);
-    //ft_index(&stack, argc);
-	/*while(stack.astack[i])
+    ft_index(&stack, argc);
+	while(i < stack.size)
     {
         printf("%d\n" , stack.astack[i]);
         i++;
-    }*/
+    }
 	/*while (i < 2)
 	{
 		ft_pb (&stack, argc);

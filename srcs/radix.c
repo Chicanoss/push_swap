@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:22:15 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/26 11:56:14 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/26 17:56:10 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int getMax(int arr[], int n)
 	int i;
 
 	i = 1;
-	while (i < n)
+	while (i < n - 1)
 	{
 		if (arr[i] > mx)
 			mx = arr[i];
@@ -42,7 +42,7 @@ void countSort(int arr[], int n, int exp)
 	i = 1;
 	while (i < 10)
 	{
-		count[i] += count[i -1];
+		count[i] += count[i - 1];
 		i++;
 	}
 	i = n - 1;
@@ -64,12 +64,9 @@ void ft_radixsort(int *arr, int n)
 {
     int m;
 	int	exp;
-	int i;
-	
+
 	exp = 1;
 	m = getMax(arr, n);
-	i = 0;
-
 	while (m / exp > 0)
 	{
 		countSort(arr, n, exp);

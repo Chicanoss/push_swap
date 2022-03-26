@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:14:49 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/26 12:02:51 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/26 17:58:39 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ void ft_index(t_args *stack, int	n)
 	int i;
 	int j;
 	
-	stack->copy = (int	*)malloc(sizeof(int) * n - 1);
-    i = 1;
-    while (i < n)
+	stack->copy = (int	*)ft_calloc(sizeof(int), n - 1);
+    i = 0;
+	/*while (i < stack->size)
+	{
+		printf("%d\n", stack->copy[i]);
+		i++;
+	}*/
+    while (i < stack->size)
     {
         stack->copy[i] = stack->astack[i];
         i++;
@@ -29,9 +34,9 @@ void ft_index(t_args *stack, int	n)
 			care 
 			*/
 	j = 0;
-	while(i < n)
+	while(i < stack->size)
 	{
-		while (j < n)
+		while (j < stack->size)
 		{
 			if(stack->astack[i] == stack->copy[j])
             {
