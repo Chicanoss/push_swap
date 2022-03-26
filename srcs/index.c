@@ -6,26 +6,25 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:14:49 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 13:57:23 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/26 12:02:51 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-void ft_index(int	*arr, int	n)
+void ft_index(t_args *stack, int	n)
 {
 	int i;
 	int j;
-	int *copy;
 	
-	copy = (int	*)malloc(sizeof(int) * n);
+	stack->copy = (int	*)malloc(sizeof(int) * n - 1);
     i = 1;
     while (i < n)
     {
-        copy[i] = arr[i];
+        stack->copy[i] = stack->astack[i];
         i++;
     }
-	ft_radixsort(copy, n);
+	ft_radixsort(stack->copy, n);
 	i = 0; 	/*
 			care 
 			*/
@@ -34,13 +33,14 @@ void ft_index(int	*arr, int	n)
 	{
 		while (j < n)
 		{
-			if(arr[i] == copy[j])
+			if(stack->astack[i] == stack->copy[j])
             {
-				arr[i] = j;
+				stack->astack[i] = j;
             }
 			j++;
 		}
         j = 0;
 		i++;
 	}
+	printf("index ok\n");
 }

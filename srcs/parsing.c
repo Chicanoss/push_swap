@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 22:14:41 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/26 12:11:44 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,34 +112,32 @@ int	ft_check_char(char	**arr)
 	return(1);
 }
 
-int	*ft_parsing(char	**arr, int	n)
+int	*ft_parsing(char	**arr, t_args	*stack, int	n)
 {
 	int i;
 	int j;
-	int	*astack;
 
 	ft_check_char(arr);
-	astack = (int	*)ft_calloc(sizeof(int) , (n - 1));
+	stack->astack = ft_calloc(sizeof(int) , (n - 1));
 	i = 1;
 	j = 0;
 	while(i < n)
 	{
-		astack[j] = ft_atoi(arr[i]);
+		stack->astack[j] = ft_atoi(arr[i]);
 		i++;
 		j++;
 	}
-	i = 1;
-	/*while(i < n)
+	i = 0;
+	while(stack->astack[i])
 	{
-		printf("%d\n", astack[i]);
+		printf("%d\n", stack->astack[i]);
 		i++;
-	}*/
+	}
 	
-	ft_check_order(astack, n);
-	ft_check_doubles(astack, n);
+	ft_check_order(stack->astack, n);
+	ft_check_doubles(stack->astack, n);
 	
 	printf("parsing ok\n");
-	printf("%d\n", astack[0]);
 	
-	return(astack);
+	return(stack->astack);
 }

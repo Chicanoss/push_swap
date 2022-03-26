@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 22:57:09 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/26 12:06:18 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 int main(int   argc, char **argv)
 {
-	int *bstack;
-    //int n = sizeof(argc) / sizeof(argv[0]);
-    int i;
-	int	*astack;
 
+	t_args	stack;
+	int i;
+
+	stack.bstack = (int	*)ft_calloc(sizeof(int), argc - 1);
+	stack.asize = 0;
+	stack.bsize = 0;
     i = 0;
     /*while (i < argc)
     {
@@ -26,20 +28,19 @@ int main(int   argc, char **argv)
         i++;
     }
 	*/
-	bstack = (int	*)ft_calloc(sizeof(int), argc - 1);
 	i = 1;
-    astack = ft_parsing(argv, argc);
-    ft_index(astack, argc);
-	/*while( i < argc)
+    ft_parsing(argv, &stack, argc);
+    //ft_index(&stack, argc);
+	/*while(stack.astack[i])
     {
-        printf("%d\n" , astack[i]);
+        printf("%d\n" , stack.astack[i]);
         i++;
     }*/
-	while (i < 2)
+	/*while (i < 2)
 	{
-		ft_pb (astack, bstack, argc);
+		ft_pb (&stack, argc);
 		i++;
-	}
+	}*/
 	//printf("%d", astack[0]);
     //ft_radixsort(arr, n);
    /* while( i < n)
