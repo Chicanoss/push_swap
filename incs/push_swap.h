@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/27 14:47:53 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:12:48 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void ft_algo (int    *astack,int *bstack, int n);
 int	*ft_parsing(char	**arr, t_args	*stack, int	n);
 void ft_pb (t_args *stack);
 void *ft_calloc(size_t count, size_t size);
+void ft_pa (t_args *stack);
 
 # endif

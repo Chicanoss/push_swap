@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/27 14:58:55 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:11:21 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main(int   argc, char **argv)
 
 	stack.bstack = (int	*)ft_calloc(sizeof(int), argc - 1);
 	stack.astack = (int	*)ft_calloc(sizeof(int), argc - 1);
-	stack.asize = 0;
-	stack.bsize = argc - 1;
+	stack.asize = argc - 1;
+	stack.bsize = 0;
 	stack.size = argc - 1;
     i = 0;
     /*while (i < argc)
@@ -46,14 +46,14 @@ int main(int   argc, char **argv)
 		i++;
 	}
 	i = 0;
-	while(i < stack.bsize)
+	while(i < stack.asize)
 	{
 		printf("Stack a : %d\n", stack.astack[i]);
 		i++;
 	}
 	i = 0;
-	printf("valeur de asize : %d", stack.asize);
-	while(i <= stack.asize)
+	printf("valeur de bsize : %d\n", stack.bsize);
+	while(i < stack.bsize)
 	{
 		printf("Stack b : %d\n", stack.bstack[i]);
 		i++;
