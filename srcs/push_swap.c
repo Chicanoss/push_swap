@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/27 03:22:59 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/27 13:25:38 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int main(int   argc, char **argv)
 	i = 0;
     ft_parsing(argv, &stack, argc);
     ft_index(&stack, argc);
-	/*while(i < stack.size)
+	while(i < stack.size)
     {
         printf("%d\n" , stack.astack[i]);
         i++;
-    }*/
+    }
 	/*while (i < 2)
 	{
 		ft_pb (&stack, argc);

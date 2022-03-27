@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:14:49 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/27 03:53:11 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/27 13:27:37 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,16 @@ void ft_index(t_args *stack, int	n)
 {
 	int i;
 	int j;
+	int	*copy;
 	
-	stack->copy = (int	*)ft_calloc(sizeof(int), n - 1);
+	copy = (int	*)ft_calloc(sizeof(int), n - 1);
     i = 0;
     while (i < stack->size)
     {
-        stack->copy[i] = stack->astack[i];
+        copy[i] = stack->astack[i];
         i++;
     }
-	ft_radixsort(stack->copy, n);
-	i = 0;
-	/*while (i < stack->size)
-	{
-		printf("%d\n", stack->copy[i]);
-		i++;
-	}*/
-	i = 0;
-	while (i < stack->size)
-	{
-		printf("valeur de astack :%d\n", stack->astack[i]);
-		i++;
-	}
-	i = 0;
-	while (i < stack->size)
-	{
-		printf("valeur de copy : %d\n", stack->copy[i]);
-		i++;
-	}
+	ft_radixsort(copy, n);
 	i = 0; 	/*
 			care 
 			*/
@@ -51,7 +34,7 @@ void ft_index(t_args *stack, int	n)
 	{
 		while (j < stack->size)
 		{
-			if(stack->astack[i] == stack->copy[j])
+			if(stack->astack[i] == copy[j])
             {
 				stack->astack[i] = j;
             }

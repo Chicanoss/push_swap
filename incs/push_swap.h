@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/26 17:05:14 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/27 13:14:51 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_arguments
 {
 	int	*astack;
 	int	*bstack;
-	int	*copy;
 	int	size;
 	int	asize;
 	int	bsize;
