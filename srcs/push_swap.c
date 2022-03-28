@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/27 15:11:21 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/28 17:44:57 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,29 @@ int main(int   argc, char **argv)
 	i = 0;
 	while (i < stack.size)
 	{
-		ft_pb (&stack);
-		printf("test\n");
+		ft_push(&stack, "pb");
 		i++;
 	}
+    /*i = 0;
+    while (i < stack.size)
+	{
+		ft_push(&stack, "pa");
+		i++;
+	}*/
+    /*i = 0;
+    while (i < 1)
+    {
+        rotate(&stack, "rb");
+        i++;
+    }*/
+
+    /*
+    i = 0;
+    while(i < 1)
+    {
+        swap(&stack, "sa");
+        i++;
+    }*/
 	i = 0;
 	while(i < stack.asize)
 	{
@@ -58,20 +77,6 @@ int main(int   argc, char **argv)
 		printf("Stack b : %d\n", stack.bstack[i]);
 		i++;
 	}
-	//printf("%d", astack[0]);
-    //ft_radixsort(arr, n);
-   /* while( i < n)
-    {
-        arr[i] = DecToBase(2, arr[i]);
-        i++;
-    }*/
-    //i = 0;
-    //ft_algo(astack, bstack, argc);
-    /*while (i < n)
-    {
-        printf("%d\n" , arr[i]);
-        i++;
-    }*/
 
     return 0;
 }

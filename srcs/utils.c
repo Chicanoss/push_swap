@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 20:48:49 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 20:49:24 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/28 11:35:08 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,15 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ft_bzero(ptr, size * count);
 	return (ptr);
+}
+
+int	ft_strcmp(const char	*first, const char	*second)
+{
+	size_t	i;
+
+	i = 0;
+	while (first[i] && (unsigned char)first[i] == \
+	(unsigned char)second[i])
+		i++;
+	return ((unsigned char)first[i] - (unsigned char)second[i]);
 }
