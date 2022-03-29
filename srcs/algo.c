@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/23 22:03:27 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 17:40:34 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,69 @@ int ft_getMax(int arr[], int n)
     return mx;
 }
 
-
-void ft_algo (int    *astack,int *bstack, int n)
+bool is_sorted(t_args *stack)
 {
-    int m;
-	int	exp;
 	int i;
-	
-	bstack = 0;
-	exp = 1;
-	m = ft_getMax(astack, n);
-	printf(" valeur du max %d\n" , m);
-	i = 0;
 
-	while (m / exp > 0)
+	i = 1;
+	if (stack->asize == stack->size)
 	{
-		exp *= 10;
+		while(stack->astack[i] < stack->astack[i + 1] && i < stack->size - 1)
+		{
+			printf("valeur de i : %d\n" , i );
+			if (i == stack->size - 2)
+			{
+				return(true);
+			}
+			i++;
+		}
+		
 	}
-    printf("valeur de exp : %d\n" , exp);
+	return(false);
+
+}
+
+
+void	algo(t_args *stack)
+{
+	int		i;
+	int		j;
+	int max;
+
+	i = 0;
+	max = ft_getMax(stack->astack, stack->size);
+	printf("valeur de max : %d\n", max);
+	while (!is_sorted(stack)) // issorted pour définir la fin des opérations => True = tant que b n'est pas vide
+	{
+		j = -1;
+		while (++j < stack->size && !is_sorted(stack))
+		{
+			/*if (stack->asize <= 5 && stack->asize > 3)
+				ft_sort_less_than5(&stack);
+			else if (stack->asize == 3)
+				ft_sort_less_than3(&stack);*/
+			printf("valeur de la stack : %d\n", stack->astack[stack->asize - 1]);
+			if ((stack->astack[stack->asize - 1] >> i) & 0)
+				rotate(stack, "ra");
+			else
+				ft_push(stack, "pb");
+		}
+		while (stack->bsize > 0)
+			ft_push(stack, "pa");
+		printf("\nvaleur de i :%d | taille de b: %d\n", i, stack->bsize);
+		i++;
+		
+		puts("Result:");
+		for (int k = 0; k < stack->size; ++k) {
+		dprintf(1, " %d |", stack->astack[k]);
+		}
+		dprintf(1, "\nStack b (si elle est pas vide:oupsi...) (taille: %d): ", stack->bsize);
+		for (int p = 0; p < stack->bsize; ++p) {
+		dprintf(1, " %d |", stack->bstack[p]);
+		}
+		
+	}
+}
 
 
 
@@ -74,4 +119,3 @@ void ft_algo (int    *astack,int *bstack, int n)
             }
         }
     }*/
-}

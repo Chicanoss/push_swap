@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/28 17:44:32 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 17:36:11 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void ft_push(t_args *stack, char	*cmd)
 {
 	if (ft_strcmp(cmd, "pa") == 0)
 	{
-		if(stack->bsize < 0)
+		if(stack->bsize <= 0)
     	{
         	perror("Bsize est inferieur à 0");
         	exit(EXIT_FAILURE);
@@ -28,7 +28,7 @@ void ft_push(t_args *stack, char	*cmd)
 	}
 	if (ft_strcmp(cmd, "pb") == 0)
 	{
-		if(stack->asize < 0)
+		if(stack->asize <= 0)
     	{
         	perror("Bsize est inferieur à 0");
         	exit(EXIT_FAILURE);
@@ -90,18 +90,42 @@ void swap(t_args	*stack, char	*cmd)
 	void rotate(t_args *stack, char	*cmd)
 	{
 		int	tmp;
+		int i;
 
+		i = 0;
 		if(ft_strcmp(cmd, "ra") == 0)
 		{
-			tmp = stack->astack[stack->asize - stack->asize];
-			stack->astack[stack->asize - stack->asize] = stack->astack[stack->asize - 1];
-			stack->astack[stack->asize - 1] = tmp;
+			if (stack->asize < 2)
+			{
+				// aled
+			}
+			tmp = stack->astack[stack->asize - 1];
+			//printf("valeur de tmp : %d\n", tmp);
+			while (i < stack->asize - 1)
+			{
+				stack->astack[stack->asize - i - 1] = stack->astack[stack->asize - i - 2];
+				//printf("%d prends la valeur de %d\n", stack->astack[(stack->asize - stack->size) + i], stack->astack[(stack->asize - stack->size) + i + 1]);
+				i++;
+			}
+			stack->astack[0] = tmp;
+			printf("ra\n");
 		}
 		if(ft_strcmp(cmd, "rb") == 0)
 		{
-			tmp = stack->bstack[stack->bsize - stack->bsize];
-			stack->bstack[stack->bsize - stack->bsize] = stack->bstack[stack->bsize - 1];
-			stack->bstack[stack->bsize - 1] = tmp;
+			if (stack->asize < 2)
+			{
+				// aled
+			}
+			tmp = stack->bstack[stack->bsize - 1];
+			//printf("valeur de tmp : %d\n", tmp);
+			while (i < stack->bsize - 1)
+			{
+				stack->bstack[stack->bsize - i - 1] = stack->bstack[stack->bsize - i - 2];
+				//printf("%d prends la valeur de %d\n", stack->astack[(stack->asize - stack->size) + i], stack->astack[(stack->asize - stack->size) + i + 1]);
+				i++;
+			}
+			stack->bstack[0] = tmp;
+			printf("rb\n");
 		}
 	}
 	

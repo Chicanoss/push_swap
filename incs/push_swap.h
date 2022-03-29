@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/28 17:32:35 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 13:21:13 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <math.h>
 # include <limits.h>
 # include <string.h>
+# include <stdbool.h>
 
 typedef struct s_arguments
 {
@@ -31,7 +32,7 @@ typedef struct s_arguments
 void ft_radixsort(int *arr, int n);
 int DecToBase(int base, int n);
 void ft_index(t_args *stack, int	n);
-void ft_algo (int    *astack,int *bstack, int n);
+void algo(t_args *stack);
 int	*ft_parsing(char	**arr, t_args	*stack, int	n);
 void *ft_calloc(size_t count, size_t size);
 void ft_push(t_args *stack, char	*cmd);

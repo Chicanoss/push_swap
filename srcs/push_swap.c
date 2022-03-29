@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/28 17:44:57 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 17:20:49 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int main(int   argc, char **argv)
 
 	t_args	stack;
 	int i;
+    int *base_copy;
 
+    base_copy = (int    *)ft_calloc(sizeof(int), argc - 1);
 	stack.bstack = (int	*)ft_calloc(sizeof(int), argc - 1);
 	stack.astack = (int	*)ft_calloc(sizeof(int), argc - 1);
 	stack.asize = argc - 1;
@@ -33,37 +35,54 @@ int main(int   argc, char **argv)
 	i = 0;
     ft_parsing(argv, &stack, argc);
     ft_index(&stack, argc);
-	while(i < stack.size)
+    i = 0;
+    /*while (i < stack.size)
     {
-        printf("%d\n" , stack.astack[i]);
+        base_copy[i] = stack.astack[i];
+        printf("valeur de copy base : %d\n", base_copy[i]);
+        base_copy[i] = DecToBase(2, base_copy[i]);
+        printf("Valeur de Astack en binaire : %d\n", base_copy[i]);
         i++;
     }
+    i = 0;
+    while(i < stack.size)
+    {
+        printf("stack a index : %d\n" , stack.astack[i]);
+        i++;
+    }*/
+    algo(&stack);
+    /*printf("valeur de asize : %d\n", stack.asize);
+    printf("valeur de size : %d\n", stack.size);
+    */
+    /*
 	i = 0;
 	while (i < stack.size)
 	{
 		ft_push(&stack, "pb");
 		i++;
 	}
-    /*i = 0;
+    i = 0;
+    
     while (i < stack.size)
 	{
 		ft_push(&stack, "pa");
 		i++;
-	}*/
+	}
+    */
     /*i = 0;
     while (i < 1)
     {
-        rotate(&stack, "rb");
+        rotate(&stack, "ra");
         i++;
     }*/
-
-    /*
+/*
     i = 0;
     while(i < 1)
     {
         swap(&stack, "sa");
         i++;
-    }*/
+    }
+    */
 	i = 0;
 	while(i < stack.asize)
 	{
@@ -71,7 +90,7 @@ int main(int   argc, char **argv)
 		i++;
 	}
 	i = 0;
-	printf("valeur de bsize : %d\n", stack.bsize);
+	printf("valeur de asize : %d\n", stack.asize);
 	while(i < stack.bsize)
 	{
 		printf("Stack b : %d\n", stack.bstack[i]);

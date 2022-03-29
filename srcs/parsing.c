@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/26 17:23:54 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 17:01:04 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int ft_check_doubles(int arr[], int n)
 	check = 1;
 	j = 0;
 	i = 0;
-	while (i < n)
+	while (i < n - 1)
 	{
-		while(j < n)
+		while(j < n - 1)
 		{
 			if (arr[i] == arr[j] && check == 0)
 			{
@@ -64,7 +64,7 @@ int ft_check_doubles(int arr[], int n)
 	return(1);
 }
 
-int ft_check_order(int	*arr, int n)
+/*int ft_check_order(int	*arr, int n)
 {
 	int i;
 
@@ -85,7 +85,7 @@ int ft_check_order(int	*arr, int n)
 		i++;
 	}
 	return(1);
-}
+}*/
 int	ft_check_char(char	**arr)
 {
 	int i;
@@ -134,7 +134,7 @@ int	*ft_parsing(char	**arr, t_args	*stack, int	n)
 		i++;
 	}*/
 	
-	ft_check_order(stack->astack, n);
+	//ft_check_order(stack->astack, n);
 	ft_check_doubles(stack->astack, n);
 	
 	printf("parsing ok\n");
