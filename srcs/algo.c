@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/29 18:40:00 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 20:23:13 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,6 @@ bool is_sorted(t_args *stack)
 			i++;
 		}
 		return (true);
-
-		// while(stack->astack[i] < stack->astack[i + 1] && i < (stack->size - 1))
-		// {
-		// 	//printf("valeur de i : %d\n" , i );
-		// 	if (i == stack->size - 2)
-		// 	{
-		// 		return(true);
-		// 	}
-		// 	i++;
-		// }
-		
 	}
 	return(false);
 
@@ -85,7 +74,7 @@ void	algo(t_args *stack)
 		}
 		while (stack->bsize > 0)
 			ft_push(stack, "pa");
-		printf("\nvaleur de i :%d | taille de b: %d\n", i, stack->bsize);
+		//printf("\nvaleur de i :%d | taille de b: %d\n", i, stack->bsize);
 		i++;
 		
 		puts("Result:");
@@ -98,8 +87,6 @@ void	algo(t_args *stack)
 		}
 		dprintf(1, "\n");
 
-		// if  (i == 4)
-			// break ;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/29 18:28:18 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 19:30:16 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int main(int   argc, char **argv)
 		printf("Stack b : %d\n", stack.bstack[i]);
 		i++;
 	}
+    free(stack.bstack);
 
     return 0;
 }

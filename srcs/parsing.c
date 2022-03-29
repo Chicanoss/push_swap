@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/29 17:01:04 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/29 20:22:55 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char	*str)
 {
-	int	i;
-	int	neg;
+	int			i;
+	int			neg;
 	long int	temp;
 
 	neg = 1;
@@ -35,7 +35,7 @@ int	ft_atoi(const char	*str)
 	return (temp * neg);
 }
 
-int ft_check_doubles(int arr[], int n)
+int	ft_check_doubles(int arr[], int n)
 {
 	int	i;
 	int	j;
@@ -46,7 +46,7 @@ int ft_check_doubles(int arr[], int n)
 	i = 0;
 	while (i < n - 1)
 	{
-		while(j < n - 1)
+		while (j < n - 1)
 		{
 			if (arr[i] == arr[j] && check == 0)
 			{
@@ -61,12 +61,12 @@ int ft_check_doubles(int arr[], int n)
 		j = 0;
 		i++;
 	}
-	return(1);
+	return (1);
 }
 
-/*int ft_check_order(int	*arr, int n)
+int	ft_check_order(int	*arr, int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n <= 2)
@@ -76,29 +76,28 @@ int ft_check_doubles(int arr[], int n)
 	}
 	while (arr[i] < arr[i + 1])
 	{
-		//printf("%d comparé à %d\n", arr[i], arr[i + 1]);
-		if(i == n - 3)
+		if (i == n - 3)
 		{
 			perror("in order");
 			exit(EXIT_FAILURE);
 		}
 		i++;
 	}
-	return(1);
-}*/
+	return (1);
+}
+
 int	ft_check_char(char	**arr)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 0;
-
-	while(arr[i])
+	while (arr[i])
 	{
 		while (arr[i][j])
 		{
-			if(arr[i][j] >= 48 && arr[i][j] <= 57)
+			if (arr[i][j] >= 48 && arr[i][j] <= 57)
 				j++;
 			else
 			{
@@ -109,35 +108,25 @@ int	ft_check_char(char	**arr)
 		j = 0;
 		i++;
 	}
-	return(1);
+	return (1);
 }
 
-int	*ft_parsing(char	**arr, t_args	*stack, int	n)
+int	*ft_parsing(char **arr, t_args *stack, int n)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	ft_check_char(arr);
 	i = 1;
 	j = 0;
-	while(i < n)
+	while (i < n)
 	{
-		//printf("test\n");
 		stack->astack[j] = ft_atoi(arr[i]);
 		i++;
 		j++;
 	}
 	i = 0;
-	/*while(i < stack->size)
-	{
-		printf("%d\n", stack->astack[i]);
-		i++;
-	}*/
-	
-	//ft_check_order(stack->astack, n);
 	ft_check_doubles(stack->astack, n);
-	
 	printf("parsing ok\n");
-	
-	return(stack->astack);
+	return (stack->astack);
 }
