@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/29 20:23:13 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/30 22:36:30 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,17 @@ void	algo(t_args *stack)
 {
 	int		i;
 	int		j;
-	int max;
 
 	i = 0;
-	max = ft_getMax(stack->astack, stack->size);
-	printf("valeur de max : %d\n", max);
+	//printf("asize = %d\n", stack->asize);
+	
 	while (!is_sorted(stack)) // issorted pour définir la fin des opérations => True = tant que b n'est pas vide
 	{
 		j = -1;
-		while (++j < stack->size /* && !is_sorted(stack) */)
+		while (++j < stack->size )
 		{
-			/*if (stack->asize <= 5 && stack->asize > 3)
-				ft_sort_less_than5(&stack);
-			else if (stack->asize == 3)
-				ft_sort_less_than3(&stack);*/
+			//if (stack->asize <= 5 && stack->asize > 3)
+				//ft_sort_less_than5(&stack);
 			// printf("valeur de la stack : %d\n", stack->astack[stack->asize - 1]);
 			if ((stack->astack[stack->asize - 1] >> i) & 1)
 				rotate(stack, "ra");
@@ -85,35 +82,7 @@ void	algo(t_args *stack)
 		for (int p = 0; p < stack->bsize; ++p) {
 			dprintf(1, " %d |", stack->bstack[p]);
 		}
-		dprintf(1, "\n");
+		dprintf(1, "\n\n\n");
 
 	}
 }
-
-
-
-
-
-
-
-
-
-    /*int size = n;
-    int max_num = n - 1; // the biggest number in a is stack_size - 1
-    int max_bits = 0; // how many bits for max_num 
-    while ((max_num >> max_bits) != 0) ++max_bits;
-    {
-        for (int i = 0 ; i < max_bits ; ++i) // repeat for max_bits times
-        {
-            for(int j = 0 ; j < size ; ++j)
-            {
-                int num = arr[1]; // top number of A
-                if (((num >> i)&1) == 1)
-                    printf("ra\n");
-        // if the (i + 1)-th bit is 1, leave in stack a
-                else
-                    printf("PB\n");
-        // otherwise push to stack b
-            }
-        }
-    }*/

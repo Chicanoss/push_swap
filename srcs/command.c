@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/30 19:05:38 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/30 22:14:30 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,8 @@ void	reverse_rotate(t_args *stack,char *cmd)
 		printf("valeur de TMP : %d\n", tmp);
 		while (i < stack->asize - 1)
 		{
-			stack->astack[stack->asize - i] = stack->astack[stack->asize - i - 1];
+			//printf( "%d prends la valeur de %d\n",stack->astack[i - 1], stack->astack[i -2] );
+			stack->astack[i] = stack->astack[i + 1];
 			i++;
 		}
 		stack->astack[stack->asize - 1] = tmp;

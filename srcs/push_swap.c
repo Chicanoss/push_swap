@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/30 18:56:07 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/30 22:35:03 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,35 +48,36 @@ int main(int   argc, char **argv)
     i = 0;
     while(i < stack.size)
     {
-        printf("stack a index : %d\n" , stack.astack[i]);
+        printf("StackA: %d |" , stack.astack[i]);
         i++;
     }
-    //algo(&stack);
+	printf("\n");
+	algo(&stack);
     /*printf("valeur de asize : %d\n", stack.asize);
     printf("valeur de size : %d\n", stack.size);
     */
-   i = 0;
+  /* i = 0;
    while (i < 1)
    {
 	   reverse_rotate(&stack, "rra");
 	   i++;
-   }
+   }*/
    
-    /*
-	i = 0;
-	while (i < stack.size)
+    
+	/*i = 0;
+	while (i < 2)
 	{
 		ft_push(&stack, "pb");
 		i++;
 	}
-    i = 0;
+    i = 0;*/
     
-    while (i < stack.size)
+    /*while (i < stack.size)
 	{
 		ft_push(&stack, "pa");
 		i++;
-	}
-    */
+	}*/
+    
     /*i = 0;
     while (i < 1)
     {
@@ -94,14 +95,15 @@ int main(int   argc, char **argv)
 	i = 0;
 	while(i < stack.asize)
 	{
-		printf("Stack a : %d\n", stack.astack[i]);
+		printf("Stack a : %d |", stack.astack[i]);
 		i++;
 	}
+	printf("\n");
 	i = 0;
-	printf("valeur de asize : %d\n", stack.asize);
+	//printf("valeur de asize : %d\n", stack.asize);
 	while(i < stack.bsize)
 	{
-		printf("Stack b : %d\n", stack.bstack[i]);
+		printf("Stack b : %d |", stack.bstack[i]);
 		i++;
 	}
     free(stack.bstack);

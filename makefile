@@ -15,6 +15,7 @@ LST_SRCS	:=	push_swap.c \
 				parsing.c \
 				command.c \
 				utils.c	\
+				specials_cases.c \
 
 
 LST_OBJS	:=	$(LST_SRCS:.c=.o)
