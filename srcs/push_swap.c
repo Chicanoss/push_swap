@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/30 12:43:06 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/30 18:56:07 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,17 @@ int main(int   argc, char **argv)
         printf("stack a index : %d\n" , stack.astack[i]);
         i++;
     }
-    algo(&stack);
+    //algo(&stack);
     /*printf("valeur de asize : %d\n", stack.asize);
     printf("valeur de size : %d\n", stack.size);
     */
    i = 0;
-   /*while (i < 1)
+   while (i < 1)
    {
 	   reverse_rotate(&stack, "rra");
 	   i++;
    }
-   */
+   
     /*
 	i = 0;
 	while (i < stack.size)
