@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/30 11:57:25 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/30 12:41:09 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,3 +93,22 @@ void	rotate(t_args *stack, char *cmd)
 		printf("rb\n");
 	}
 }
+void	reverse_rotate(t_args *stack,char *cmd)
+{
+	int	i;
+	int	tmp;
+
+	i = 0;
+	if (ft_strcmp(cmd, "rra") == 0)
+	{
+		tmp = stack->astack[0];
+		while (i < stack->asize + 1)
+		{
+			stack->astack[stack->asize + i + 1] = stack->astack[stack->asize + i + 2];
+			i++;
+		}
+		stack->astack[stack->asize - 1] = tmp;
+		printf("rra\n");
+	}
+}
+
