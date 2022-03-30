@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/29 13:21:13 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/30 12:04:48 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,15 @@ typedef struct s_arguments
 	int	bsize;
 }				t_args;
 
-void ft_radixsort(int *arr, int n);
-int DecToBase(int base, int n);
-void ft_index(t_args *stack, int	n);
-void algo(t_args *stack);
-int	*ft_parsing(char	**arr, t_args	*stack, int	n);
-void *ft_calloc(size_t count, size_t size);
-void ft_push(t_args *stack, char	*cmd);
-int	ft_strcmp(const char	*first, const char	*second);
-void swap(t_args	*stack, char	*cmd);
-void rotate(t_args *stack, char	*cmd);
+void	ft_radixsort(int *arr, int n);
+int		DecToBase(int base, int n);
+void	ft_index(t_args *stack, int n);
+void	algo(t_args *stack);
+int		*ft_parsing(char **arr, t_args *stack, int n);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_push(t_args *stack, char	*cmd);
+int		ft_strcmp(const char	*first, const char	*second);
+void	swap(t_args *stack, char *cmd);
+void	rotate(t_args *stack, char	*cmd);
 
-
-# endif
+#endif

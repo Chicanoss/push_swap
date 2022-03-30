@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/29 20:34:44 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/30 11:57:25 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
+
+void	ft_error()
+{
+	perror("command error");
+	exit(EXIT_FAILURE);
+}
 void	ft_push(t_args *stack, char *cmd)
 {
 	if (ft_strcmp(cmd, "pa") == 0)
 	{
 		if (stack->bsize <= 0)
-		{
-			perror("Bsize est inferieur à 0");
-			exit(EXIT_FAILURE);
-		}
+			ft_error();
 		stack->astack[stack->asize] = stack->bstack[stack->bsize - 1];
 		stack->asize++;
 		stack->bsize--;
@@ -29,10 +32,7 @@ void	ft_push(t_args *stack, char *cmd)
 	if (ft_strcmp(cmd, "pb") == 0)
 	{
 		if (stack->asize <= 0)
-		{
-			perror("Bsize est inferieur à 0");
-			exit(EXIT_FAILURE);
-		}
+			ft_error();
 		stack->bstack[stack->bsize] = stack->astack[stack->asize - 1];
 		stack->bsize++;
 		stack->asize--;
@@ -47,10 +47,7 @@ void	swap(t_args *stack, char *cmd)
 	if (ft_strcmp(cmd, "sa") == 0)
 	{
 		if (stack->asize < 2)
-		{
-			perror("Swap : Bsize est inferieur à 2");
-			exit(EXIT_FAILURE);
-		}
+			ft_error();
 		tmp = stack->astack[stack->asize - stack->asize];
 		stack->astack[stack->bsize - stack->bsize] = stack->astack[stack->bsize - stack->bsize + 1];
 		stack->astack[stack->bsize - stack->bsize + 1] = tmp;
@@ -59,10 +56,7 @@ void	swap(t_args *stack, char *cmd)
 	if (ft_strcmp(cmd, "sb") == 0)
 	{
 		if (stack->bsize < 2)
-		{
-			perror("Swap : Bsize est inferieur à 2");
-			exit(EXIT_FAILURE);
-		}
+			ft_error();
 		tmp = stack->bstack[stack->bsize - stack->bsize];
 		stack->bstack[stack->bsize - stack->bsize] = stack->bstack[stack->bsize - stack->bsize + 1];
 		stack->bstack[stack->bsize - stack->bsize + 1] = tmp;
