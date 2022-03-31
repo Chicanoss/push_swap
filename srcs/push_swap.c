@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/30 22:35:03 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/31 15:41:38 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,20 @@ int main(int   argc, char **argv)
    
     
 	/*i = 0;
-	while (i < 2)
+	while (i < stack.size)
 	{
 		ft_push(&stack, "pb");
 		i++;
-	}
-    i = 0;*/
-    
-    /*while (i < stack.size)
+	}*/
+    //i = 0;
+   /* i = 0;
+    while (i < stack.size)
 	{
 		ft_push(&stack, "pa");
 		i++;
 	}*/
     
-    /*i = 0;
+   /* i = 0;
     while (i < 1)
     {
         rotate(&stack, "ra");

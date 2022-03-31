@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/30 22:14:30 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/31 15:37:58 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,69 @@ void	ft_error()
 	perror("command error");
 	exit(EXIT_FAILURE);
 }
+ft_pb(t_args *s)
+{
+	int	i;
+	int	tmp;
+
+	i = 0;
+	tmp = s->astack[0];
+	while (i < s->asize - 1)
+	{
+		s->astack[i] = s->astack[i + 1];
+		i++;
+	}
+	s->asize--;
+	s->bsize++;
+	i = s->bsize - 1;
+	while (0 < i)
+	{
+		s->bstack[i] = s->bstack[i - 1];
+		i--;
+	}
+	s->bstack[0] = tmp;
+}
+ft_pa(t_args *s)
+{
+	int	i;
+	int	tmp;
+
+	i = 0;
+	tmp = s->bstack[0];
+	while (i < s->bsize - 1)
+	{
+		s->bstack[i] = s->bstack[i + 1];
+		i++;
+	}
+	s->bsize--;
+	s->asize++;
+	i = s->asize - 1;
+	while (0 < i)
+	{
+		s->astack[i] = s->astack[i - 1];
+		i--;
+	}
+	s->astack[0] = tmp;
+}
+
 void	ft_push(t_args *stack, char *cmd)
 {
+	int tmp;
+	int i;
 	if (ft_strcmp(cmd, "pa") == 0)
 	{
-		if (stack->bsize <= 0)
-			ft_error();
-		stack->astack[stack->asize] = stack->bstack[stack->bsize - 1];
-		stack->asize++;
-		stack->bsize--;
+		ft_pa(stack);
+		//stack->astack[stack->size - stack->asize] = stack->bstack[stack->size - stack->bsize - 1];
+
 		printf("pa\n");
 	}
+
 	if (ft_strcmp(cmd, "pb") == 0)
 	{
-		if (stack->asize <= 0)
-			ft_error();
-		stack->bstack[stack->bsize] = stack->astack[stack->asize - 1];
+		ft_pb(stack);
+		/*stack->bstack[stack->size - stack->bsize - 1] = stack->astack[stack->size - stack->asize ];
 		stack->bsize++;
-		stack->asize--;
+		stack->asize--;*/
 		printf("pb\n");
 	}
 }
@@ -48,9 +93,9 @@ void	swap(t_args *stack, char *cmd)
 	{
 		if (stack->asize < 2)
 			ft_error();
-		tmp = stack->astack[stack->asize - stack->asize];
-		stack->astack[stack->bsize - stack->bsize] = stack->astack[stack->bsize - stack->bsize + 1];
-		stack->astack[stack->bsize - stack->bsize + 1] = tmp;
+		tmp = stack->astack[0];
+		stack->astack[0] = stack->astack[1];
+		stack->astack[1] = tmp;
 		printf("sa\n");
 	}
 	if (ft_strcmp(cmd, "sb") == 0)
@@ -72,13 +117,13 @@ void	rotate(t_args *stack, char *cmd)
 	i = 0;
 	if (ft_strcmp(cmd, "ra") == 0)
 	{
-		tmp = stack->astack[stack->asize - 1];
+		tmp = stack->astack[0];
 		while (i < stack->asize - 1)
 		{
-			stack->astack[stack->asize - i - 1] = stack->astack[stack->asize - i - 2];
+			stack->astack[i] = stack->astack[i + 1];
 			i++;
 		}
-		stack->astack[0] = tmp;
+		stack->astack[stack->asize - 1] = tmp;
 		printf("ra\n");
 	}
 	if (ft_strcmp(cmd, "rb") == 0)
