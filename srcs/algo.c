@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/31 16:10:33 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/31 17:12:51 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	algo(t_args *stack)
 	i = 0;
 	//printf("asize = %d\n", stack->asize);
 	
-	/*if (stack->asize == 3)
-		ft_sort_less_than3(stack);*/
+	if (stack->asize == 3)
+		ft_sort_less_than3(stack);
 	while (!is_sorted(stack)) // issorted pour définir la fin des opérations => True = tant que b n'est pas vide
 	{
 		if (i > 6)
@@ -65,6 +65,8 @@ void	algo(t_args *stack)
 		j = -1;
 		while (++j < stack->size )
 		{
+			if (stack->asize == 3)
+			ft_sort_less_than3(stack);
 			//if (stack->asize <= 5 && stack->asize > 3)
 				//ft_sort_less_than5(&stack);
 			// printf("valeur de la stack : %d\n", stack->astack[stack->asize - 1]);

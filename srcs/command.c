@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/31 16:12:01 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/31 17:38:22 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,18 +138,16 @@ void	reverse_rotate(t_args *stack,char *cmd)
 	int	i;
 	int	tmp;
 
-	i = 0;
+	i = stack->asize - 1;
 	if (ft_strcmp(cmd, "rra") == 0)
 	{
-		tmp = stack->astack[0];
-		printf("valeur de TMP : %d\n", tmp);
-		while (i < stack->asize - 1)
+		tmp = stack->astack[stack->asize - 1];
+		while (i > 0)
 		{
-			//printf( "%d prends la valeur de %d\n",stack->astack[i - 1], stack->astack[i -2] );
-			stack->astack[i] = stack->astack[i + 1];
-			i++;
+			stack->astack[i] = stack->astack[i - 1];
+			i--;
 		}
-		stack->astack[stack->asize - 1] = tmp;
+		stack->astack[0] = tmp;
 		printf("rra\n");
 	}
 }
