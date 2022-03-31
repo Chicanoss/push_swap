@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/31 00:14:07 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/31 16:10:33 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ void	algo(t_args *stack)
 	i = 0;
 	//printf("asize = %d\n", stack->asize);
 	
-	if (stack->asize == 3)
-		ft_sort_less_than3(stack);
+	/*if (stack->asize == 3)
+		ft_sort_less_than3(stack);*/
 	while (!is_sorted(stack)) // issorted pour définir la fin des opérations => True = tant que b n'est pas vide
 	{
-		if (i > 4)
+		if (i > 6)
 			break;
 		j = -1;
 		while (++j < stack->size )
@@ -68,7 +68,7 @@ void	algo(t_args *stack)
 			//if (stack->asize <= 5 && stack->asize > 3)
 				//ft_sort_less_than5(&stack);
 			// printf("valeur de la stack : %d\n", stack->astack[stack->asize - 1]);
-			if ((!stack->astack[stack->asize - 1] >> i) & 1)
+			if ((stack->astack[0] >> i) & 1)
 				rotate(stack, "ra");
 			else
 				ft_push(stack, "pb");

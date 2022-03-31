@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/31 15:37:58 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/03/31 16:12:01 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,12 @@ void	ft_push(t_args *stack, char *cmd)
 	if (ft_strcmp(cmd, "pa") == 0)
 	{
 		ft_pa(stack);
-		//stack->astack[stack->size - stack->asize] = stack->bstack[stack->size - stack->bsize - 1];
-
 		printf("pa\n");
 	}
 
 	if (ft_strcmp(cmd, "pb") == 0)
 	{
 		ft_pb(stack);
-		/*stack->bstack[stack->size - stack->bsize - 1] = stack->astack[stack->size - stack->asize ];
-		stack->bsize++;
-		stack->asize--;*/
 		printf("pb\n");
 	}
 }
