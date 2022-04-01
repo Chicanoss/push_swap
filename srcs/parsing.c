@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/31 00:16:53 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/01 16:44:46 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	ft_check_char(char	**arr)
 	{
 		while (arr[i][j])
 		{
-			if (arr[i][j] >= 48 && arr[i][j] <= 57)
+			if ((arr[i][j] >= 48 && arr[i][j] <= 57) || arr[i][0] == '-')
 				j++;
 			else
 			{
@@ -126,7 +126,7 @@ int	*ft_parsing(char **arr, t_args *stack, int n)
 		j++;
 	}
 	i = 0;
-	//ft_check_order(stack->astack, n);
+	ft_check_order(stack->astack, n);
 	ft_check_doubles(stack->astack, n);
 	printf("parsing ok\n");
 	return (stack->astack);

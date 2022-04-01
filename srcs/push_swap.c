@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/31 17:36:21 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/01 15:01:59 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,9 @@ int main(int   argc, char **argv)
         i++;
     }
 	*/
-    i = 0;
-    while(i < stack.size)
-    {
-        printf("StackA: %d |" , stack.astack[i]);
-        i++;
-    }
-	printf("\n");
 	algo(&stack);
 	//ft_sort_less_than3(&stack);
+	//sort_five(&stack);
     /*printf("valeur de asize : %d\n", stack.asize);
     printf("valeur de size : %d\n", stack.size);
     */
@@ -93,7 +87,7 @@ int main(int   argc, char **argv)
         i++;
     }
     */
-	i = 0;
+	/*i = 0;
 	while(i < stack.asize)
 	{
 		printf("Stack a : %d |", stack.astack[i]);
@@ -106,7 +100,7 @@ int main(int   argc, char **argv)
 	{
 		printf("Stack b : %d |", stack.bstack[i]);
 		i++;
-	}
+	}*/
     free(stack.bstack);
 
     return 0;

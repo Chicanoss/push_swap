@@ -1,7 +1,7 @@
 NAME	:=	push_swap
 
 CC	:= gcc
-CFLAGS	:=	-Wall -Wextra -fsanitize=address -g3
+CFLAGS	:=	-Wall -Wextra #-fsanitize=address -g3
 
 DIR_SRCS	:=	srcs
 DIR_OBJS	:=	.objs
@@ -15,7 +15,9 @@ LST_SRCS	:=	push_swap.c \
 				parsing.c \
 				command.c \
 				utils.c	\
-				specials_cases.c \
+				sort_three.c \
+				sort_five.c \
+				sort.c \
 
 
 LST_OBJS	:=	$(LST_SRCS:.c=.o)
