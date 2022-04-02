@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/01 15:01:59 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/01 18:15:17 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ int main(int   argc, char **argv)
 		i++;
 	}*/
     free(stack.bstack);
+    free(stack.astack);
+    free(base_copy);
 
     return 0;
 }

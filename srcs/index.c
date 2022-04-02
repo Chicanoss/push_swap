@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:14:49 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/01 17:17:10 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/01 18:41:33 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,31 @@ void	ft_index(t_args *stack, int n)
 		i++;
 	}*/
 	i = 0;
+	/*while(i < n - 1)
+	{
+		dprintf(1, "valeur de astack avant index : %d\n", stack->astack[i]);
+		i++;
+	}*/
+	i = 0;
 	while (i < stack->size)
 	{
 		while (j < stack->size)
 		{
 			if (stack->astack[i] == copy[j])
+			{
 				stack->astack[i] = j;
+				break;
+			}
 			j++;
-			dprintf(1, "%p\n", &copy[j]);
 		}
 		j = 0;
 		i++;
 	}
+	i = 0;
+	/*while(i < n - 1)
+	{
+		dprintf(1, "valeur de astack après index : %d\n", stack->astack[i]);
+		i++;
+	}*/
+	free(copy);
 }

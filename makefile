@@ -1,7 +1,7 @@
 NAME	:=	push_swap
 
 CC	:= gcc
-CFLAGS	:=	-Wall -Wextra #-fsanitize=address -g3
+CFLAGS	:=	-Wall -Wextra -fsanitize=address -g3
 
 DIR_SRCS	:=	srcs
 DIR_OBJS	:=	.objs

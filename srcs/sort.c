@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 16:50:15 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/01 17:15:05 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/01 18:14:39 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	*ft_sort(int	*copy, int n)
 			copy[i] = tmp;
 			i = 0;
 		}
-		i++;
+		else
+			i++;
 	}
 	return(copy);
 }
