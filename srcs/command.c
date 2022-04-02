@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:00:42 by rgeral            #+#    #+#             */
-/*   Updated: 2022/03/31 17:38:22 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/02 16:06:01 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-
-void	ft_error()
+void	ft_error(void)
 {
 	perror("command error");
 	exit(EXIT_FAILURE);
 }
-ft_pb(t_args *s)
+
+void	ft_pb(t_args *s)
 {
 	int	i;
 	int	tmp;
@@ -40,7 +40,8 @@ ft_pb(t_args *s)
 	}
 	s->bstack[0] = tmp;
 }
-ft_pa(t_args *s)
+
+void	ft_pa(t_args *s)
 {
 	int	i;
 	int	tmp;
@@ -65,14 +66,14 @@ ft_pa(t_args *s)
 
 void	ft_push(t_args *stack, char *cmd)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
+
 	if (ft_strcmp(cmd, "pa") == 0)
 	{
 		ft_pa(stack);
 		printf("pa\n");
 	}
-
 	if (ft_strcmp(cmd, "pb") == 0)
 	{
 		ft_pb(stack);
@@ -80,26 +81,26 @@ void	ft_push(t_args *stack, char *cmd)
 	}
 }
 
-void	swap(t_args *stack, char *cmd)
+void	swap(t_args *s, char *cmd)
 {
 	int	tmp;
 
 	if (ft_strcmp(cmd, "sa") == 0)
 	{
-		if (stack->asize < 2)
+		if (s->asize < 2)
 			ft_error();
-		tmp = stack->astack[0];
-		stack->astack[0] = stack->astack[1];
-		stack->astack[1] = tmp;
+		tmp = s->astack[0];
+		s->astack[0] = s->astack[1];
+		s->astack[1] = tmp;
 		printf("sa\n");
 	}
 	if (ft_strcmp(cmd, "sb") == 0)
 	{
-		if (stack->bsize < 2)
+		if (s->bsize < 2)
 			ft_error();
-		tmp = stack->bstack[stack->bsize - stack->bsize];
-		stack->bstack[stack->bsize - stack->bsize] = stack->bstack[stack->bsize - stack->bsize + 1];
-		stack->bstack[stack->bsize - stack->bsize + 1] = tmp;
+		tmp = s->bstack[s->bsize - s->bsize];
+		s->bstack[s->bsize - s->bsize] = s->bstack[s->bsize - s->bsize + 1];
+		s->bstack[s->bsize - s->bsize + 1] = tmp;
 		printf("sb\n");
 	}
 }
@@ -121,7 +122,7 @@ void	rotate(t_args *stack, char *cmd)
 		stack->astack[stack->asize - 1] = tmp;
 		printf("ra\n");
 	}
-	if (ft_strcmp(cmd, "rb") == 0)
+	/*if (ft_strcmp(cmd, "rb") == 0)
 	{
 		tmp = stack->bstack[stack->bsize - 1];
 		while (i < stack->bsize - 1)
@@ -131,7 +132,7 @@ void	rotate(t_args *stack, char *cmd)
 		}
 		stack->bstack[0] = tmp;
 		printf("rb\n");
-	}
+	}*/
 }
 void	reverse_rotate(t_args *stack,char *cmd)
 {
@@ -151,4 +152,3 @@ void	reverse_rotate(t_args *stack,char *cmd)
 		printf("rra\n");
 	}
 }
-

@@ -6,31 +6,15 @@
 /*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:33:33 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/01 18:15:56 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/02 15:56:05 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 
-
-int ft_getMax(int arr[], int n)
+bool	is_sorted(t_args *stack)
 {
-    int mx = arr[0];
-	int i;
-
-	i = 1;
-	while (i < n)
-	{
-		if (arr[i] > mx)
-			mx = arr[i];
-		i++;
-	}
-    return mx;
-}
-
-bool is_sorted(t_args *stack)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	if (stack->asize == stack->size)
@@ -43,10 +27,8 @@ bool is_sorted(t_args *stack)
 		}
 		return (true);
 	}
-	return(false);
-
+	return (false);
 }
-
 
 void	algo(t_args *stack)
 {
@@ -54,10 +36,10 @@ void	algo(t_args *stack)
 	int		j;
 
 	i = 0;
-	while (!is_sorted(stack)) // issorted pour définir la fin des opérations => True = tant que b n'est pas vide
+	while (!is_sorted(stack))
 	{
 		j = -1;
-		while (++j < stack->size && !is_sorted(stack) )
+		while (++j < stack->size && !is_sorted(stack))
 		{
 			if (stack->asize <= 5 && stack->asize > 3)
 				sort_five(stack);
@@ -70,18 +52,6 @@ void	algo(t_args *stack)
 		}
 		while (stack->bsize > 0)
 			ft_push(stack, "pa");
-		//printf("\nvaleur de i :%d | taille de b: %d\n", i, stack->bsize);
 		i++;
-		
-		/*puts("Result:");
-		for (int k = 0; k < stack->size; ++k) {
-			dprintf(1, " %d |", stack->astack[k]);
-		}
-		dprintf(1, "\nStack b (si elle est pas vide:oupsi...) (taille: %d): ", stack->bsize);
-		for (int p = 0; p < stack->bsize; ++p) {
-			dprintf(1, " %d |", stack->bstack[p]);
-		}
-		dprintf(1, "\n\n\n");*/
-
 	}
 }
