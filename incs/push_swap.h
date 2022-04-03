@@ -6,14 +6,13 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/03 13:32:17 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/03 15:20:03 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
 # include <limits.h>
