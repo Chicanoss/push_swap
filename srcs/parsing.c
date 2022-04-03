@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/01 16:44:46 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/03 14:53:20 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	ft_atoi(const char	*str)
 		temp = temp * 10 + str[i] - '0';
 		i++;
 	}
+	if ((temp * neg) > INT_MAX || (temp * neg) < INT_MIN)
+		ft_error();
 	return (temp * neg);
 }
 
@@ -49,10 +51,7 @@ int	ft_check_doubles(int arr[], int n)
 		while (j < n - 1)
 		{
 			if (arr[i] == arr[j] && check == 0)
-			{
-				perror("Error doubles");
-				exit(EXIT_FAILURE);
-			}
+				ft_error();
 			if (arr[i] == arr[j])
 				check = 0;
 			j++;
@@ -70,17 +69,11 @@ int	ft_check_order(int	*arr, int n)
 
 	i = 0;
 	if (n <= 2)
-	{
-		perror("Not enough numbers");
-		exit(EXIT_FAILURE);
-	}
+		ft_error();
 	while (arr[i] < arr[i + 1])
 	{
 		if (i == n - 3)
-		{
-			perror("in order");
 			exit(EXIT_FAILURE);
-		}
 		i++;
 	}
 	return (1);
@@ -100,10 +93,7 @@ int	ft_check_char(char	**arr)
 			if ((arr[i][j] >= 48 && arr[i][j] <= 57) || arr[i][0] == '-')
 				j++;
 			else
-			{
-				perror("not digit");
-				exit(EXIT_FAILURE);
-			}
+				ft_error();
 		}
 		j = 0;
 		i++;
@@ -125,9 +115,7 @@ int	*ft_parsing(char **arr, t_args *stack, int n)
 		i++;
 		j++;
 	}
-	i = 0;
 	ft_check_order(stack->astack, n);
 	ft_check_doubles(stack->astack, n);
-	printf("parsing ok\n");
 	return (stack->astack);
 }

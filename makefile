@@ -8,12 +8,11 @@ DIR_OBJS	:=	.objs
 DIR_INCS	:=	incs
 
 LST_SRCS	:=	push_swap.c \
-				radix.c \
-				base.c \
 				index.c \
 				algo.c \
 				parsing.c \
 				command.c \
+				command2.c \
 				utils.c	\
 				sort_three.c \
 				sort_five.c \
