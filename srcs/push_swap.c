@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:32:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/03 14:42:56 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/03 15:30:43 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_args	stack;
 
-	if (argc <= 2)
-		exit(EXIT_FAILURE);
 	stack.bstack = (int *)ft_calloc (sizeof(int), argc - 1);
 	stack.astack = (int *)ft_calloc(sizeof(int), argc - 1);
 	stack.asize = argc - 1;

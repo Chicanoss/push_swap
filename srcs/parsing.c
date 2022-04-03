@@ -6,7 +6,7 @@
 /*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/03 14:53:20 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/03 15:29:40 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	ft_check_order(int	*arr, int n)
 
 	i = 0;
 	if (n <= 2)
-		ft_error();
+		exit(EXIT_FAILURE);
 	while (arr[i] < arr[i + 1])
 	{
 		if (i == n - 3)
