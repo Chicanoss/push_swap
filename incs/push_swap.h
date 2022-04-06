@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:23:48 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/03 15:35:37 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/06 19:00:05 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_arguments
 	int	bsize;
 }				t_args;
 
+int		ft_round(char	**arr, int i, int j, int count);
 void	ft_radixsort(int *arr, int n);
 int		DecToBase(int base, int n);
 void	ft_index(t_args *stack, int n);

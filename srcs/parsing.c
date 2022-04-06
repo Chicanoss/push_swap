@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgeral <rgeral@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rgeral <rgeral@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:20:06 by rgeral            #+#    #+#             */
-/*   Updated: 2022/04/06 17:33:36 by rgeral           ###   ########.fr       */
+/*   Updated: 2022/04/06 18:58:02 by rgeral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/push_swap.h"
 #include <stdio.h>
-/*
-	penser à check les "-" dans les argument : "-00-02" Quand il y a un "-" ça fais bug tout le chiffre -00k2
 
-*/
 int	ft_atoi(const char	*str)
 {
 	int			i;
@@ -92,24 +89,7 @@ int	ft_check_char(char	**arr)
 	count = 1;
 	i = 1;
 	j = 0;
-	while (arr[i])
-	{
-		while (arr[i][j])
-		{
-			if ((arr[i][j] >= 48 && arr[i][j] <= 57) || (arr[i][0] == '-' && count == 1)) /* problème dans la condition ; toujours vraie */
-			{
-				if (arr[i][0] == '-')
-					count = 0;
-				//printf("valeur de arr de [%d][%d] : %d\n", i, j , arr[i][j]);
-				j++;
-			}
-			else
-				ft_error();
-		}
-		count = 1;
-		j = 0;
-		i++;
-	}
+	ft_round(arr, i, j, count);
 	return (1);
 }
 

@@ -11,6 +11,7 @@ LST_SRCS	:=	push_swap.c \
 				index.c \
 				algo.c \
 				parsing.c \
+				parsing_2.c \
 				command.c \
 				command2.c \
 				utils.c	\
